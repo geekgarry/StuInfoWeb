@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>msmain.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="css/msmain.css">
+
+  </head>
+  <body>
+  		<header>
+  			<div class="header_bar">
+  				管理后台
+  			</div>
+  		</header>
+  		<aside>
+  		<div class="aside_div">
+  			<iframe src="msleft.html" id="left_iframe" name="left_iframe" onload="changeFrameHeight()">
+    		</iframe>
+    	</div>
+  		</aside>
+  		<section>
+  			<div class="section_div">
+  			<iframe src="msright.jsp" id="right_iframe" name="right_iframe" onload="changeFrameHeight()">
+    		</iframe>
+    		</div>
+  		</section>
+  		<footer>
+  			<div class="footer_inc">学生信息管理系统 ©2014-2018 MAIKE (geekcjj.top)问题求助|产品建议请上<a href="http://geekcjj.top">新工科Lab</a>&nbsp;&nbsp;&nbsp;京ICP备16037175号</div>
+			<div class="footer_other">版权所有：MAIKE工作室   联系电话：000-000-000</div>
+		</footer>
+		<script type="text/javascript">
+		 function changeFrameHeight(){
+    		var rightifm= document.getElementById("right_iframe");
+    		var leftifm= document.getElementById("left_iframe");
+    		rightifm.height=document.documentElement.clientHeight-85;
+			leftifm.height=document.documentElement.clientHeight-85;
+			leftifm.style.lineHeight=document.documentElement.clientHeight-85;
+			}
+			window.onresize=function(){  
+     		changeFrameHeight();
+			}
+		window.onload=function(){
+			document.getElementById("adminuser").innerHTML=getCookie('username');
+		}
+		</script>
+  </body>
+</html>

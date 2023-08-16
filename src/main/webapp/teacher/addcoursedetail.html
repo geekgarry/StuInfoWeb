@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>addcoursedetail.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="../css/tablecss1.css">
+	<style>
+        .bd-filter__select{
+            width: 200px;
+        }
+        .btntrtd{text-align: center;}
+        table input.input_content{height:32px; line-height: 32px; border: #0080ff 1px solid; border-radius:5px;}
+        table tr{height:33px; line-height: 33px;}
+    </style>
+
+  </head>
+  
+  <body>
+    <form action="AddStuInfoServlet" method="post" enctype="multipart/form-data" name="addstuinfoform" onsubmit="return check()"><!-- enctype="multipart/form-data" -->
+    <table border="1" class="bordered">
+    <tr>
+    	<th colspan="2" colspan="2">每节课程内容添加及资料上传</th>
+    </tr>
+    <tr>
+    	<td>请选择图片：</td><td><input id="myfile" name="myfile" type="file" size="40" /></td>
+    </tr>
+    <tr>
+    	<td></td><td></td>
+    </tr>
+    <tr>
+    	<td></td><td></td>
+    </tr>
+    <tr>
+    	<td></td><td></td>
+    </tr>
+    <tr>
+    	<td colspan="2"><input type="submit" value="提交"  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="重置"  /></td>
+    </tr>
+    </table>
+    </form>
+  </body>
+</html>

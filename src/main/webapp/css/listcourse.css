@@ -1,0 +1,19 @@
+@charset "UTF-8";
+*{padding: 0;margin: 0;}
+.menu{width:95%;margin: 0 auto; margin-top: 0;}
+.main{width:95%;margin: 0 auto;}
+.content{width:95%;margin: 0 auto;}
+.menu table{width:95%;margin: 0 auto;height: 27px;line-height: 29px;}
+.input-text{width: 200px;height:26px;border: 1px #125678 solid;}
+#queryBut{width: 50px;height:26px;border: 1px #125678 solid;}
+.list{width:99%;margin: 0 auto;}
+.optitle.clearfix{width:90%; margin: 0 auto; height:33px;line-height: 33px;}
+.input-button{width:100px;height:30px;float: right;background: #567890;color: #ffffff;}
+.title{width:100px;float: left;}
+.displaybar{width:99%; height:30px; height:30px;margin: 0 auto;}
+.updatebtn{text-decoration: none;text-align: center;color: #020202; background: #e5e5e5;
+         	border: 1px #010101 solid; border-radius: 6px; padding-left: 8px; padding-right: 8px; padding-bottom:5px; 
+         	padding-top:5px; height:30px; line-height: 30px; margin-right: 3px;}
+.deletebtn{text-decoration: none;text-align: center;color: #efefef; background: #ff0000;
+        	border: 1px #010101 solid; border-radius: 6px; padding-left: 8px; padding-right: 8px; padding-bottom:5px; 
+        	padding-top:5px; height:30px; line-height: 30px; margin-left: 3px;}

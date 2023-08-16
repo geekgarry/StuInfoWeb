@@ -1,0 +1,16 @@
+@charset "UTF-8";
+*{margin: 0;padding: 0;}
+body{
+	font-family:Arial;margin: auto;
+	font-size: 15px; color: #020202;
+}
+.container{width:99%;margin: 0 auto;margin-top: 5px;min-height:100px;}
+.header{margin: 0 auto; width:98%;height:38px; line-height: 38px; margin-top: 5px;text-align: center;}
+.findtypelabel{height:33px; line-height: 33px; text-align: center;}
+.findtype{height:33px;line-height: 33px;border: #456789 1px solid; border-radius: 6px;}
+.bycontent{height:33px;line-height: 33px;width: 60%;border: #456789 1px solid; border-radius: 6px;}
+.submit_btn{text-decoration: none;text-align: center;color: #ffffff; background: #0080ff;
+        	border: 1px #010101 solid; border-radius: 6px; padding-left: 8px; padding-right: 8px;
+        	height:35px; line-height: 35px; margin-left: 3px;}
+.main_container{margin: 0 auto; text-align: center;margin-top: 5px;width:98%;border: #456789 1px solid; border-radius: 6px;}
+.main_container table{margin: 0 auto;}

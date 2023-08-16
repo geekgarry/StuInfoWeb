@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>listCourseScore.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style>
+	* {
+		padding:0;
+		margin:0;
+	}
+	.searche_div{width:100%; margin: 0 auto; text-align: center;}
+	.wrap {
+		width:85%;
+		margin:20px auto 0;
+	}
+	table {
+		border-collapse:collapse;
+		border-spacing:0;
+		border:1px solid #c0c0c0;
+		width:84%;
+		margin: 0 auto;
+	}
+	th,td {
+		border:1px solid #d0d0d0;
+		color:#404060;
+		padding:10px;
+	}
+	th {
+		background-color:#09c;
+		font:bold 16px "微软雅黑";
+		color:#fff;
+	}
+	td {
+		font:14px "微软雅黑";
+	}
+	tbody tr {
+		background-color:#f0f0f0;
+	}
+	tbody tr:hover {
+		cursor:pointer;
+		background-color:#fafafa;
+	}
+	</style>
+  </head>
+  
+  <body>
+  	<div class="searche_div">
+    <select>
+    	<option value="1">按班级查询</option>
+    	<option value="2">按学号查询</option>
+    </select>
+    <input type="text" name="keyString" id="keyString" size="40">
+    <input type="button" value="查询" id="findbtn" onclick="">
+    </div>
+    <div class="wrap">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="j_cbAll" />
+                </th>
+                <th>菜名</th>
+                <th>饭店</th>
+            </tr>
+        </thead>
+        <tbody id="j_tb">
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>红烧肉</td>
+                <td>家里蹲</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>西红柿鸡蛋</td>
+                <td>家里蹲</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>红烧狮子头</td>
+                <td>家里蹲</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>日式肥牛</td>
+                <td>家里蹲</td>
+            </tr>
+
+        </tbody>
+    </table>
+	</div>
+
+	<script>
+	 var all = document.getElementById("j_cbAll");
+	 var tbody = document.getElementById("j_tb");
+	 var checkboxs = tbody.getElementsByTagName("input");
+	 all.onclick = function() {
+	     for (var i = 0; i < checkboxs.length; i++) {
+	         var checkbox = checkboxs[i];
+	         checkbox.checked = this.checked;
+	     }
+	 };
+	 for (var i = 0; i < checkboxs.length; i++) {
+	     checkboxs[i].onclick = function() {
+	         var isCheckedAll = true;
+	         for (var i = 0; i < checkboxs.length; i++) {
+	             if (!checkboxs[i].checked) {
+	                 isCheckedAll = false;
+	                 break;
+	             }
+	         }
+	         all.checked = isCheckedAll;
+	     };
+	 }
+	 </script>
+  </body>
+</html>

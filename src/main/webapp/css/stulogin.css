@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+/* CSS Document */
+*{margin:0 0;}
+body{font-family:Arial;margin:0 auto; height:100%;}
+.main_content{width:100%;}
+.container{margin:0 auto; position:relative; top: 83px;}
+.col-md-6 .offset-3{margin:auto;width:77%;height:40px;text-align: center; }
+.text-center{text-align:center; size:20px;}
+.col-md-4 .offset-4{margin:auto;width:77%;height:500px;text-align: center;}
+.card{margin:auto;width:380px;height:auto; border: solid 2px #0080ff; border-radius:15px; background: #fefefe;padding: 0px;
+	filter: alpha(opacity=77); /*IE*/-moz-opacity: 0.77; /*Mozilla*/opacity: 0.77; /*FF*/}
+.card-header{margin:auto;width:365px;padding-left:11px;height:auto; background: #efefef;border-top-left-radius:15px;border-top-right-radius:15px;}
+.card-body{margin:auto;width:376px;height:auto;}
+.form-group{margin:auto;width:auto;height:77px;padding-left:11px;}
+.form-control{width:94%;height:33px; margin:auto;border: solid 1px #c0c0c0; border-radius:11px;}
+.form_div{ width:auto;height:20px;display: block;text-align: left;size: 11px;}
+.btn{width:70px;height:37px;background: #0080ff; border-radius: 11px; color:#ffffff;margin:6px;}
+canvas {background: rgb(56, 163, 179); position:absolute; display: block;z-index: -1;}

@@ -1,0 +1,41 @@
+@charset "UTF-8";
+.container{width:90%;margin: 0 auto;}
+.evenRow{background-color:#F7FDEA;}
+.oddRow{background-color:#FFFFFF;}
+.activeRow{background-color:#FFFF99;}
+.clickRow{background-color:#CCCCFF;}
+*{margin:0;padding:0;}
+body{background:#f9f9f9;color:#000;text-shadow:1px 2px 1px #FFFFFF;font-family:"微软雅黑";font-size:14px;}
+.table_solid{border-bottom:1px solid #CCCCCC;border-right:1px solid #CCCCCC;position:relative;width:66%;margin:20px auto;text-align:center;}
+.table_solid th,.table_solid td{border-left:1px solid #CCCCCC;border-top:1px solid #CCCCCC;color:#333333;padding:0.5em;}
+.table_solid th{background-color:#DFF9FF;}
+#universalbtn{width:42px;height:34px;line-height:34px; color:#ffffff; background:#58b4eb; 
+    	border: #ff8000 1px solid; border-radius:6px; }
+table input.input_content{height:30px; line-height: 30px; border: #0080ff 1px solid; border-radius:5px;}
+table tr{height:33px; line-height: 33px;}
+.black_overlay{ 
+            display: none; 
+            position: absolute; 
+            top: 0%; 
+            left: 0%; 
+            width: 100%; 
+            height: 100%; 
+            background-color: black; 
+            z-index:1001; 
+            -moz-opacity: 0.8; 
+            opacity:.80; 
+            filter: alpha(opacity=88); 
+        } 
+.white_content { 
+            display: none; 
+            position: absolute; 
+            top: 25%; 
+            left: 25%; 
+            width: 55%; 
+            height: 55%; 
+            padding: 20px; 
+            border: 10px solid orange; 
+            background-color: white; 
+            z-index:1002; 
+            overflow: auto; 
+        } 

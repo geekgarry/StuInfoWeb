@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>testscore.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    <script type="text/javascript">
+    //获取Location对象的search属性值
+	var searchStr = location.search;
+	 
+	//由于searchStr属性值包括“?”，所以除去该字符
+	searchStr = searchStr.substr(1);
+	 
+	//将searchStr字符串分割成数组，数组中的每一个元素为一个参数和参数值
+	var searchs = searchStr.split("&");
+	 
+	//获得第一个参数和值
+	var address = searchs[0].split("=");
+	document.write(address);
+	
+	 
+	//获得第二个参数和值
+	var sex = searchs[1].split("=");
+	document.write(sex);
+	function GetQueryString(name)
+	{
+	     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	     var r = window.location.search.substr(1).match(reg);
+	     if(r!=null)
+	     return  unescape(r[2]); 
+	     return null;
+	}
+	 
+	// 调用方法
+	alert(GetQueryString("username")+GetQueryString("password"));
+	//var uname = GetQueryString("参数名");
+    </script>
+  </body>
+</html>

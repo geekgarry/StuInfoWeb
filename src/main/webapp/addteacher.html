@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>addteacher.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link  href="css/addteacher.css"  rel="stylesheet" type="text/css"/>
+    <link href="css/jquery.tableui.css"  rel="stylesheet" type="text/css"/>
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.tableui.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$(".table_solid").tableUI();
+	});
+	</script>
+
+  </head>
+  
+  <body>
+    <div class="container">
+    <form action="AddTeacherInfo" method="post" name="addteacher">
+    <table class="table_solid" border="0" cellspacing="0">
+	<tr>
+		<th colspan="2">添加教师信息</th>
+	</tr>
+	<tr>
+		<td>编号</td>
+		<td><input type="text" size="30" id="teacherid" name="teacherid" class="input_content"></td>
+	</tr>
+	<tr>
+		<td>姓名</td>
+		<td><input type="text" size="30" id="realname" name="realname" class="input_content"></td>
+	</tr>
+	<tr>
+		<td>性别</td>
+		<td>
+		<input type="radio" name="gender" value="0">女
+		<input type="radio" name="gender" value="1" checked="checked">男
+		</td>
+	</tr>
+	<tr>
+		<td>身份证</td>
+		<td><input type="text" size="30" id="identityid" name="identityid" class="input_content"></td>
+	</tr>
+	<tr>
+		<td>学院/系</td>
+		<td><input type="text" size="30" id="incollege" name="incollege" class="input_content"></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<div id="errormsg"></div>
+		<input type="button" value="提交" onclick="submitadd()" id="universalbtn">
+		<input type="reset" value="重置" id="universalbtn">
+		</td>
+	</tr>
+	</table>
+	</form>
+	</div>
+	<p>示例弹出层：<a href = "JavaScript:void(0)" onclick = "openDialog()">请点这里</a></p>
+	<div id="light" class="white_content">
+            <table>
+                <tr>
+                    <td>fffff</td>
+                    <td>dddddd</td>
+                </tr>
+                <tr>
+                    <td>fffff</td>
+                    <td>dddddd</td>
+                </tr>
+                <tr>
+                    <td>fffff</td>
+                    <td>dddddd</td>
+                </tr>
+            </table> 
+            <a href = "javascript:void(0)" onclick = "closeDialog()">点这里关闭本窗口</a>
+        </div> 
+        <div id="fade" class="black_overlay"></div>
+        <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+        <script type="text/javascript">
+        //var addteacherform=document.getElementsByName("addteacher");
+        $(function(){
+        });
+        function openDialog(){
+            document.getElementById('light').style.display='block';
+            document.getElementById('fade').style.display='block'
+        }
+        function closeDialog(){
+            document.getElementById('light').style.display='none';
+            document.getElementById('fade').style.display='none'
+        }
+        function submitadd(){
+        	var teacherid=document.getElementById("teacherid").value;
+        	var realname=document.getElementById("realname").value;
+        	var identityid=document.getElementById("identityid").value;
+        	var incollege=document.getElementById("incollege").value;
+        	var identitymatch=/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+			var namematch=/^[\u4e00-\u9fa5]{0,}$/;
+			var idmatch=/^\d{11,}$/;
+        	if(teacherid==""||realname==""||identityid==""||incollege==""){
+        		$("#errormsg").html("不能为空！请重新输入！");
+        	}else if(!(identitymatch.test(identityid))){
+        		$("#errormsg").html("身份证格式错误！请重新输入！");
+        	}else if(!(namematch.test(realname))||!(namematch.test(incollege))){
+        		$("#errormsg").html("身份证格式错误！请重新输入！");
+        	}else if(!(idmatch.test(teacherid))){
+        		$("#errormsg").html("教师编号格式错误！请重新输入！");
+        	}else{
+        		//addteacherform.submit();
+        		$(addteacher).submit()
+        	}
+        }
+    </script>
+  </body>
+</html>

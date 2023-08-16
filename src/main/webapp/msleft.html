@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>msleft.html</title>
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/msleft.css">
+  </head>
+  
+  <body onload="changeFrameHeight()">  
+  <div class="container">
+		<div
+			style="background: #FFF url('images/gradients.png') 0 -280px repeat-x;
+			border: 1px solid #CCC;
+			border-radius: 5px;
+			margin: 0 auto;
+			height:100%;
+			min-width: 140px;
+			max-width:220px;
+			font-size: 12px;
+			"
+			id="leftmenu">
+			<h2>
+				<b style="font-family:'华文行楷'; color: #ff6600;">
+				学生信息管理系统
+				</b>
+			</h2>
+			<ul class="YOUR_SELECTOR_Menu">
+				<li><span><h4><b style="color: #006600;">学生信息管理</b></h4></span>
+					<ul>                    
+						<li><a href="addstuinfo.html" target="right_iframe"><b><font color="#5eaeae">添加学生信息</font></b></a>
+						</li>
+						<!-- <li>
+						<a href="QueryUserServlet" target="mainFrame">求职信息管理</a>
+						</li> -->
+						<li><a href="selectstuinfo.html" target="right_iframe"><b><font color="#5eaeae">管理学生信息</font></b></a>
+						</li>
+						<li><a href="findstuinfo.html" target="right_iframe"><b><font color="#5eaeae">查询学生信息</font></b></a>
+						</li>
+						<li><a href="auditstuinfo.jsp" target="right_iframe"><b><font color="#5eaeae">审核学生信息</font></b></a>
+						</li>
+					</ul>
+				</li>
+				<li><span><h4> <b><font color="#006600">学生成绩管理</font></b></h4></span>
+					<ul>
+						<li><a href="listCourseScore.html" target="right_iframe"><b><font color="#5eaeae">查询学生成绩</font></b></a>
+						</li>
+						<li><a href="listcourse.html" target="right_iframe"><b><font color="#5eaeae">所有学科信息</font></b></a>
+						</li>
+						<li><a href="addCourse.html" target="right_iframe"><b><font color="#5eaeae">添加新的学科信息</font></b></a>
+						</li>
+					</ul>
+				</li>
+				<li><span><h4> <b><font color="#006600">教师信息管理</font></b></h4></span>
+					<ul>
+						<li><a href="listallTeachCourse.html" target="right_iframe"><b><font color="#5eaeae">教师任课信息</font></b></a>
+						</li>
+						<li><a href="listteacher.html" target="right_iframe"><b><font color="#5eaeae">所有教师信息</font></b></a>
+						</li>
+						<li><a href="addteacher.html" target="right_iframe"><b><font color="#5eaeae">添加新老师信息</font></b></a>
+						</li>
+					</ul>
+				</li>
+				<li><span><h4> <b><font color="#006600">管理员信息管理</font></b></h4></span>
+					<ul>
+						<li><a href="listalladminuser.html" target="right_iframe"><b><font color="#5eaeae">所有管理员</font></b></a>
+						</li>
+						<li><a href="addadminuser.html" target="right_iframe"><b><font color="#5eaeae">添加新管理员</font></b></a>
+						</li>
+					</ul>
+				</li>
+				<li><span><h4> <b><font color="#006600">其他功能</font></b></h4> </span>
+					<ul>			 
+					<!-- 	<li><a href="./myflash/myflash.html" target="mainFrame"><b> <font color="#5eaeae">关于我们</font></b></a> -->
+					  	<li><a href="aboutus.html" target="right_iframe"><b> <font color="#5eaeae">关于我们</font></b></a>  
+						</li> 
+						<li><a href="help.html" target="right_iframe"><b><font color=#5eaeae>帮助</font></b></a></li>
+					<!-- 	<li><a href="#" target="mainFrame"><b><font color="#5eaeae">退出</font></b></a></li> -->
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		 function changeFrameHeight(){
+    		var leftmenu= document.getElementById("leftmenu");
+			leftmenu.height=document.documentElement.clientHeight-88;
+			}
+			window.onresize=function(){  
+     		changeFrameHeight();
+			}
+	</script>
+	</body>
+</html>

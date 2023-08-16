@@ -1,0 +1,9 @@
+@charset "UTF-8";
+*{margin: 0 0;padding: 0;}
+.container{width:96%;margin: 0 auto;}
+.YOUR_SELECTOR_Menu{display: block;margin: 0 auto;}
+.YOUR_SELECTOR_Menu li{list-style: none;display: block;margin: 0 auto;}
+.YOUR_SELECTOR_Menu li span{text-indent: 10px; font-size: 14px;}
+.YOUR_SELECTOR_Menu ul li{list-style: none;display: block;margin-left: 0 auto; 
+	text-indent: 19px;text-shadow: orange;height: 20px;}
+.YOUR_SELECTOR_Menu ul li a{text-decoration: none;}

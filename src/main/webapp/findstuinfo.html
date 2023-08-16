@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>findstuinfo.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="css/findstuinfo.css">
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <!-- Javascript goes in the document HEAD -->
+	<!-- CSS goes in the document HEAD or added to your external stylesheet -->
+    <style type="text/css">
+    body{
+    margin: 0 auto;
+    width:100%;
+    height:100%;
+    }
+    *{padding: 0;}
+    .container{margin: 0 auto;
+    	text-align: center;
+    }
+    	.table
+        {
+            border-collapse: collapse;
+            margin: 0 auto;
+            text-align: center;
+            width:98%; margin: 0 auto;
+            margin: 5px auto;
+        }
+        .table td, table th
+        {
+            border: 1px solid #cad9ea;
+            color: #666;
+            height: 30px;
+        }
+        .table thead th
+        {
+            background-color: #CCE8EB;
+            width: 100px;
+        }
+        .table tr:nth-child(odd)
+        {
+            background: #fff;
+        }
+        .table tr:nth-child(even)
+        {
+            background: #F5FAFA;
+        }
+        .titlerow td{
+        	font-size: 14px; color:#123456; height:40px;
+        }
+        .stuinforow td{
+        	font-size: 13px; padding: 0; margin: 0 0;color: #010101;height:44px;
+        }
+        .updatebtn{text-decoration: none;text-align: center;color: #020202; background: #e5e5e5;
+         	border: 1px #010101 solid; border-radius: 6px; padding-left: 8px; padding-right: 8px; padding-bottom:5px; 
+         	padding-top:5px; height:30px; line-height: 30px; margin-right: 3px;}
+        .deletebtn{text-decoration: none;text-align: center;color: #efefef; background: #ff0000;
+        	border: 1px #010101 solid; border-radius: 6px; padding-left: 8px; padding-right: 8px; padding-bottom:5px; 
+        	padding-top:5px; height:30px; line-height: 30px; margin-left: 3px;}
+    </style>
+  </head>
+  
+  <body>
+  <div class="container">
+    <div class="header">
+    <form name="" id="selectName">
+    <label class="findtypelabel">查询类别：</label>
+    <input type="hidden" value="1" name="pageNo">
+    <select class="findtype" name="findtype" id="findtype">
+    	<option value="0">全部</option>
+    	<option value="1">姓名</option>
+    	<option value="2">学号</option>
+    	<option value="3">年级</option>
+    	<option value="4">学籍地址</option>
+    	<option value="5">性别</option>
+    </select>
+    <input type="text" name="bycontent" class="bycontent" id="bycontent" size="40">
+    <input type="button" value="查询" class="submit_btn" id="queryBut">
+    </form>
+    </div>
+    <div class="main_container">
+	    <table id="tab" class="table">
+	  	<thead>
+	  	<tr class="titlerow">
+	  	<td>
+	  	学号
+	  	</td>
+	  	<td>
+	  	密码
+	  	</td>
+	  	<td>
+	  	年级
+	  	</td>
+	  	<td>
+	  	学院
+	  	</td>
+	  	<td>
+	  	班级
+	  	</td>
+	  	<td>
+	  	政治面貌
+	  	</td>
+	  	<!-- <td>
+	  	身份证号
+	  	</td> -->
+	  	<td>
+	  	性别
+	  	</td>
+	  	<td>
+	  	姓名
+	  	</td>
+	  	<td>
+	  	学籍地址
+	  	</td>
+	  	<td>
+	  	出生日期
+	  	</td>
+	  	<td>
+	  	操作
+	  	</td>
+	  	</tr>
+	  	</thead>
+	    </table>
+	    <div class="errormsg" style="color:green;font-size: 12px; text-align: center;"></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+    		//var jsonstr=null;
+    		var jsonarray=new Array();
+    		document.onkeydown=function(event){
+				var e = event || window.event || arguments.callee.caller.arguments[0];
+				if(e && e.keyCode==13){ // enter 键
+					//要做的事情
+					findstuinfo(1);
+				}
+			};
+     	 /* function findstuinfo(){
+		        //创建XMLHttpRequest对象
+		        var xmlHttp = new XMLHttpRequest();
+		        //获取值
+		        var typestr = document.getElementsByName("findtype").value;
+		        var keystr=document.getElementsByName("bycontent").value;
+		        if(keystr==""||keystr==null){
+					document.getElementsByClassName("errormsg").innerHTML="不能为空！请重新输入！";
+					//alert("dsgivniofbgns");
+				}else{
+				//document.getElementById("errormsg").innerHTML="";
+		        //如果是false
+		        //xmlhttp.open("GET", "IsExistAdminUserUserid?userid="+username,false);
+				//xmlhttp.send();
+				//document.getElementById("resultmsg").innerHTML=xmlhttp.responseText;
+		        //设置回调函数
+		        xmlHttp.onreadystatechange = function () {
+		            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+		            	jsonstr=xmlHttp.responseText;
+		            	var data=xmlHttp.responseText;
+		            	showData(data);
+		            }
+		        }
+		        //配置XMLHttpRequest对象
+		        xmlHttp.open("GET", "FindStuInfo?keystr="+keystr+"&typestr="+typestr,true);
+		        //发送请求
+		        xmlHttp.send(null);
+		        }
+		} */
+		$(function(){ 
+			findstuinfo(1); 
+			$("#queryBut").click(function(){ 
+				findstuinfo(1); 
+			});
+		});
+		function findstuinfo(pageNo){
+			//获取值
+		    var typestr = $("#findtype").val;//document.getElementById("findtype").value;
+		    var keystr=$("#bycontent").val;//document.getElementById("bycontent").value;
+		    //if(keystr==""||keystr==null){
+				//document.getElementsByClassName("errormsg").innerHTML="不能为空！请重新输入！";
+				//$("#tab tr:not(:first)").empty(); //清空table（除了第一行以外）
+				//alert("dsgivniofbgns");
+			//}
+			$("[name=pageNo]").val(pageNo); 
+			/*表单数据 序列化-->表单中有个隐藏域 储存的是 页号
+	       	 	 * 每次异步刷新的是表格信息
+	        	 *表单中的数据不会变动
+	           	 *根据方法的  pageNo 参数的变动
+	           	*查询不同页号的 信息
+	         */ 
+	         var params= $("#selectName").serialize();
+			$.getJSON("FindStuInfo",params,function(data,textStatus){//{ typestr:$("#findtype").val, keystr:$("#bycontent").val}
+			    //删除表格之前数据(标题栏除外)--->防止出现几页的数据叠加的情况 
+	            $("#tab tr").not(":first").remove(); 
+	         	//设置上一页 下一页连接 
+	         	$("a:eq(0)").attr("href","javascript:getByPageBean(1)"); 
+	         	$("a:eq(1)").attr("href","javascript:getByPageBean("+data.previous+")"); 
+	         	$("a:eq(2)").attr("href","javascript:getByPageBean("+data.next+")"); 
+	         	$("a:eq(3)").attr("href","javascript:getByPageBean("+data.totalpagesize+")"); 
+	         	//设置显示信息(当前页号,总页号,总条数) 
+	         	$("#pageNo").html(data.currentpage);
+	        	$("#totalPage").html(data.totalpagesize);
+	         	$("#totalCount").html(data.totalrows);
+	         	//$("#topagecount").val(data.currentpage);
+	         	//在表格添加数据 使用each方法遍历 控制器传回的数据中的list集合
+	         	//jsonstr=data.list;
+	         	//totalrows=data.totalrows;
+				showData(data.list);//我们仅做数据展示
+			});
+		}
+		function showData(datalist) {
+          var str = "";//定义用于拼接的字符串
+          var obj = eval(datalist);
+          var gender=null;
+          var politicsstatus=null;
+		  //var latlngarray=new Array();
+		  //var MAX = obj.length;
+          for (var i = 0; i < obj.length; i++) {
+              //拼接表格的行和列
+              if(obj[i].gender=="1"){
+              	gender="男";
+              }else{
+              	gender="女";
+              }
+              if(obj.politicsstatus=="0"){
+              	politicsstatus="共产党员";
+              }else if(obj.politicsstatus=="1"){
+              	politicsstatus="共青团员";
+              }else if(obj.politicsstatus=="2"){
+              	politicsstatus="民主党派人士";
+              }else if(obj.politicsstatus=="3"){
+              	politicsstatus="无党派民主人士";
+              }else{
+              	politicsstatus="无党派人士";
+              }
+              jsonarray[i]=obj[i].password;
+              obj[i].password="******";
+              str = "<tbody><tr class='stuinforow'><td>" + obj[i].id + "</td><td><span id='pwd"+i+"'>" + obj[i].password + "</span><sapn><input type='checkbox' id='yincang"+i+"' checked='checked' onclick='yincang()'>隐藏</span></td><td>" 
+              + obj[i].stugrade + "</td><td>"+obj[i].incollege + "</td><td>"+obj[i].stuclass + "</td>"+
+              "<td>" + politicsstatus + "</td><td>" + gender + "</td><td>" + obj[i].realname + "</td>"
+              +"<td>" + obj[i].address + "</td><td>" + obj[i].borndate + "</td><td><a class='updatebtn' href='QueryStuInfoByStuId?stuid="+obj[i].id+"'>修改</a><a class='deletebtn' onclick='return firm();' href='Deletestuinfobyid?stuid="+obj[i].id+"'>删除</a></td></tr></tbody>";/* <td>" + obj[i].identityid + "</td> */
+              //追加到table中
+             $("#tab tr:not(:first)").empty(); //清空table（除了第一行以外）
+           	 $("#tab").append(str);
+           }
+	     }
+	     function yincang(){
+	     	//var objson = eval(jsonstr);
+	     	for(var i=0;i<(document.getElementById("tab").rows.length-1);i++){
+	     		
+	          if(document.getElementById("yincang"+i).checked==true){
+	              	document.getElementById("pwd"+i).innerHTML="******";
+	          }else{
+	          		document.getElementById("pwd"+i).innerHTML=jsonarray[i];
+	          }
+	        }
+	     }
+	     //弹出一个询问框，有确定和取消按钮
+    	function firm() {
+	        //利用对话框返回的值 （true 或者 false）
+	        if (confirm("你确定要删除吗？")) {
+	            //alert("点击了确定");
+	            return true;
+	        }else {
+	            //alert("点击了取消");
+	            return false;
+	        }
+    	}
+    </script>
+  </body>
+</html>

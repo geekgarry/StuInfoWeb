@@ -1,0 +1,13 @@
+@charset "utf-8";
+*{margin:0;padding:0;}
+body{background:#f9f9f9;color:#000;text-shadow:1px 2px 1px #FFFFFF;font-family:"微软雅黑";font-size:14px;}
+.container{width:100%;margin: 0 auto;}
+.evenRow{background-color:#F7FDEA;}
+.oddRow{background-color:#FFFFFF;}
+.activeRow{background-color:#FFFF99;}
+.clickRow{background-color:#CCCCFF;}
+.table_solid{border-bottom:1px solid #CCCCCC;border-right:1px solid #CCCCCC;position:relative;width:88%;margin:5px auto;text-align:center;}
+.table_solid th,.table_solid td{border-left:1px solid #CCCCCC;border-top:1px solid #CCCCCC;color:#333333;padding:0.5em;}
+.table_solid th{background-color:#DFF9FF;}
+.searche_div{width:100%;height:30px; height:30px; text-align: center; margin: 4px auto;}
+.displaybar{width:88%; height:30px; height:30px;margin: 0 auto;}

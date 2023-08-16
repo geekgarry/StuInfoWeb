@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>addCourse.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="css/addadminuser.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/css-table.css">
+
+  </head>
+  
+  <body>
+    <div class="content">
+    	<form action="AddCourseServlet" name="addcourseform" method="post" accept-charset="UTF-8">
+    	<table>
+    	<thead>
+    	<tr><th colspan="2">添加教学课程</th></tr>
+    	</thead>
+    	<tbody>
+    	<tr><td>课程：</td><td><input type="text" name="subjectname" id="subjectname" size="40"></td></tr>
+    	<tr><td>学分：</td>
+    	<td>
+    	<select name="subjectcredit">
+    		<option value="1">1学分</option>
+    		<option value="1.5">1.5学分</option>
+    		<option value="2">2学分</option>
+    		<option value="2.5">2.5学分</option>
+    		<option value="3">3学分</option>
+    		<option value="3.5">3.5学分</option>
+    		<option value="4">4学分</option>
+    		<option value="4.5">4.5学分</option>
+    		<option value="5">5学分</option>
+    		<option value="5.5">5.5学分</option>
+    		<option value="6">6学分</option>
+    	</select>
+    	<div id="pwd1errormsg" class="errormsg"></div>
+    	</td>
+    	</tr>
+    	<tr><td>课程类别：</td>
+    	<td>
+    	<select name="subjecttype">
+    		<option value="专业基础课">专业基础课</option>
+    		<option value="通识必修课">通识必修课</option>
+    		<option value="专业方向课">专业方向课</option>
+    		<option value="专业方向课(选修)">专业方向课(选修)</option>
+    		<option value="专业任选课">专业任选课</option>
+    		<option value="课外通选课">课外通选课</option>
+    		<option value="集中实践课">集中实践课</option>
+    	</select>
+    	<div id="errormsg" class="errormsg"></div>
+    	</td></tr>
+    	<tr><td>课程性质：</td>
+    	<td>
+    	<select name="subjectproperty">
+    		<option value="必修">必修</option>
+    		<option value="选修">选修</option>
+    		<option value="限选">限选</option>
+    		<option value="任选">任选</option>
+    	</select>
+    	<div id="errormsg" class="errormsg"></div>
+    	</td></tr>
+    	<tr><td>课时：</td>
+    	<td>
+    	<select name="subjecthour">
+    		<option value="24">24课时</option>
+    		<option value="48">48课时</option>
+    		<option value="52">52课时</option>
+    		<option value="56">56课时</option>
+    		<option value="60">60课时</option>
+    		<option value="64">64课时</option>
+    	</select>
+    	<div id="errormsg" class="errormsg"></div>
+    	</td></tr>
+    	<tr><td>课程时间：</td>
+    	<td>
+    	<select name="subjecttime" id="subjecttime">
+    		<option value="大一上学期">大一上学期</option>
+    		<option value="大一下学期">大一下学期</option>
+    		<option value="大二上学期">大二上学期</option>
+    		<option value="大二下学期">大二下学期</option>
+    		<option value="大三上学期">大三上学期</option>
+    		<option value="大三下学期">大三下学期</option>
+    		<option value="大四上学期">大四上学期</option>
+    		<option value="大四下学期">大四下学期</option>
+    	</select>
+    	<div id="errormsg" class="errormsg"></div>
+    	</td></tr>
+    	<tr><td colspan="2"><input type="button" value="添加" size="40" id="universalbtn" onclick="submitclick()"></td></tr>
+    	</tbody>
+    	</table>
+    	</form>
+    	<script type="text/javascript">
+    	var addcourseform=document.addcourseform;
+    	function submitclick(){
+    	var subjectname=document.getElementById("subjectname").value;
+    	//var subjecttime=document.getElementById("subjecttime").value;
+    	var pwdmatch=/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;
+    	if(subjectname==""){//||subjecttime==""
+    		alert("不能为空！");
+    	}/* else if(!(pwdmatch.test(pwd1))){
+    		document.getElementById("pwd1errormsg").innerHTML="密码必须需为不小于6位的数字或字母组合，开头必须位数字！";
+    	}else if(pwd1!=pwd2){
+    		document.getElementById("errormsg").innerHTML="两次密码不一致请重新填写！";
+    	} */else{
+    		addcourseform.submit();
+    	}
+    	}
+    	//var usrmatch="\w+";
+    	</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+@charset "UTF-8";
+body { 
+	margin:0; 
+	padding:20px; 
+	font:13px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+	}
+	
+/* ---- Some Resets ---- */
+
+p, table, caption, td, tr, th {
+	margin:0 auto;
+	padding:0;
+	font-weight:normal;
+	}
+
+/* ---- Paragraphs ---- */
+
+p {
+	margin-bottom:5px;
+	}
+	
+/* ---- Table ---- */
+
+#travel {
+	border-collapse:collapse;
+	margin-bottom:1px;
+	width:88%;
+	margin: 0 auto;
+	}
+	
+caption {
+		text-align:left;
+		font-size:13px;
+		padding-bottom:10px;
+		}
+	
+#travel td,
+#travel th {
+		padding:2px;
+		border:1px solid #fff;
+		border-width:0 1px 1px 0;
+		height: 35px;
+		}
+		
+#travel th {
+		background:#91c5d4;
+		}
+			
+#travel thead th[colspan],
+#travel thead th[rowspan] {
+			background:#66a9bd;
+			}
+		
+#travel tbody th,
+#travel tfoot th {
+		text-align:left;
+		background:#91c5d4;
+		}
+		
+#travel tbody td,
+#travel tfoot td {
+		text-align:center;
+		background:#d5eaf0;
+		}
+		
+#travel tfoot th {
+		background:#b0cc7f;
+		}
+		
+#travel tfoot td {
+		background:#d7e1c5;
+		font-weight:bold;
+		}
+			
+#travel tbody tr.odd td { 
+		background:#bcd9e1;
+		}
+.main_container{width:100%; margin: 0 auto;}
+.displaybar{width:88%;margin: 0 auto;}
+.displaybar{text-align: left;}
+.universalbtn{text-decoration: none;text-align: center;color: #efefef; background: #0080ff;
+        	border: 1px #010101 solid; border-radius: 6px; padding-left: 8px; padding-right: 8px; 
+        	height:28px; line-height: 28px; margin-left: 3px;}
+.black_overlay{ 
+            display: none; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; background-color: #86eccd; 
+            z-index:1001; -moz-opacity: 0.8; opacity:.80; filter: alpha(opacity=88); }
+.white_content { 
+            display: none; position: absolute; width: 85%; height: 65%; top: 15%;
+            padding: 10px; border: 5px solid #6cb5bb; background-color: #fefefe; z-index:1002; overflow: auto; }

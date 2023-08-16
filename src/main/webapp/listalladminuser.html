@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>listalladminuser.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="css/tablecss2.css">-->
+	<style type="text/css">
+	    body{
+	    margin: 0 auto;
+	    width:100%;
+	    height:100%;
+	    }
+	    *{padding: 0;}
+	    .container{margin: 0 auto;
+	    	text-align: center;
+	    }
+    	.table
+        {
+            border-collapse: collapse;
+            margin: 0 auto;
+            text-align: center;
+            width:98%; 
+            margin: 1px auto;
+        }
+        .table td, table th
+        {
+            border: 1px solid #cad9ea;
+            color: #666;
+            height: 30px;
+        }
+        .table thead th
+        {
+            background-color: #CCE8EB;
+            width: 100px;
+        }
+        .table tr:nth-child(odd)
+        {
+            background: #fff;
+        }
+        .table tr:nth-child(even)
+        {
+            background: #F5FAFA;
+        }
+        .titlerow td{
+        	font-size: 14px; color:#123456; height:40px;
+        }
+        .stuinforow td{
+        	font-size: 13px; padding: 0; margin: 0 0;color: #010101;height:44px;
+        }
+        .header_bar{ width: 98%; height:40px; line-height: 40px; text-align:center; margin: 3px auto; font-size: 13px;}
+        .title_span{width: 40%; margin: 0 auto; height:35px; line-height: 35px; text-align: center;}
+        .refresh_btn{ height: 35px; line-height: 35px; width:44px; text-align: center; margin: 0 auto;}
+        .updatebtn{text-decoration: none;text-align: center;color: #020202; background: #e5e5e5;
+         	border: 1px #010101 solid; border-radius: 6px; padding-left: 8px; padding-right: 8px; padding-bottom:5px; 
+         	padding-top:5px; height:30px; line-height: 30px; margin-right: 3px;}
+        .deletebtn{text-decoration: none;text-align: center;color: #efefef; background: #ff0000;
+        	border: 1px #010101 solid; border-radius: 6px; padding-left: 8px; padding-right: 8px; padding-bottom:5px; 
+        	padding-top:5px; height:30px; line-height: 30px; margin-left: 3px;}
+    </style>
+  </head>
+  
+  <body onload="requestdata()">
+    <div class="header_bar">
+		<span class="title_span">管理员信息表</span>
+		<!-- <input type="button" value="R" name="refresh_btn" class="refresh_btn"> -->
+	</div> 
+  	<div class="container">
+  	<table id="tab" class="table">
+  	<thead>
+  	<tr class="titlerow">
+  	<td>
+  	账号
+  	</td>
+  	<td>
+  	密码
+  	</td>
+  	<td>
+  	创建时间
+  	</td>
+  	<td>
+  	更新时间
+  	</td>
+  	<td>
+  	操作
+  	</td>
+  	</tr>
+  	</thead>
+    </table>
+    </div>
+  </body>
+  <script type="text/javascript">
+  var jsonstr=null;
+  function requestdata(){
+		  	/* $ajax({
+		  	url:"SelectStuInfoServlet",
+		  	type:"post",
+		  	dataType: "json",
+		  	success: function(data){
+		  	//这个方法里是ajax发送请求成功之后执行的代码
+		  	showData(data);//我们仅做数据展示
+		  	},
+		  	error: function(msg){
+		  	alert("ajax连接异常："+msg);
+		  	}
+		  	});	*/
+		    //解决中文乱码问题的方法1,页面端发出的数据作一次encodeURI，服务端使用new String(old.getBytes("iso8859-1"),"UTF-8");  
+		    //解决中文乱码问题的方法2,页面端发出的数据作两次encodeURI,服务端使用String name = URLDecoder.decode(old,"UTF-8");  
+			//解决中文乱码问题的方法1,页面端发出的数据作一次encodeURI，服务端使用new String(old.getBytes("iso8859-1"),"UTF-8");  
+			//解决中文乱码问题的方法2,页面端发出的数据作两次encodeURI,服务端使用String name = URLDecoder.decode(old,"UTF-8");  
+			var url = "ListAdminUser";//+encodeURI(encodeURI($("#username").val()));  
+			url = convertURL(url);
+			$.get(url,null,function(data){
+				jsonstr=data;
+				showData(data);//我们仅做数据展示
+			});
+  	}
+  	//给url地址增加时间蒫，瞒过浏览器，不读取缓存  
+	function convertURL(url){  
+		    //获取时间戳  
+		    var timstamp = (new Date()).valueOf();  
+		    //将时间戳信息拼接到url上  
+		    if(url.indexOf("?") >=0){  
+		        url = url + "&t=" + timstamp;  
+		    }else{  
+		        url = url + "?t=" + timstamp;  
+		    }  
+		    return url;  
+	}
+  	function showData(data) {
+          var str = "";//定义用于拼接的字符串
+          var obj = eval(data);
+          var gender=null;
+          var politics=null;
+		  //var latlngarray=new Array();
+		  //var MAX = obj.length;
+          for (var i = 0; i < obj.length; i++) {
+              //拼接表格的行和列
+              obj[i].password="******";
+              str = "<tbody><tr class='stuinforow'><td>" + obj[i].username + "</td><td><span id='pwd"+i+"'>" + obj[i].password + "</span><sapn><input type='checkbox' id='yincang"+i+"' checked='checked' onclick='yincang()'>隐藏</span></td><td>" + obj[i].create_time + "</td>"+
+              "<td>" + obj[i].update_time + "</td><td><a class='updatebtn' href='QueryAdminUser?id="+obj[i].id+"'>修改</a><a class='deletebtn' onclick='return firm();' href='DeleteAdminUser?id="+obj[i].id+"'>删除</a></td></tr></tbody>";/* <td>" + obj[i].identityid + "</td> */
+              //追加到table中
+           $("#tab").append(str);
+           }
+     }
+     function yincang(){
+     	var objson = eval(jsonstr);
+     	for(var i=0;i<(document.getElementById("tab").rows.length-1);i++){
+     		
+          if(document.getElementById("yincang"+i).checked==true){
+              	document.getElementById("pwd"+i).innerHTML="******";
+          }else{
+          		document.getElementById("pwd"+i).innerHTML=objson[i].password;
+          }
+        }
+     }
+     /* function loadaddress(addstr){
+     	$.ajax({
+		        type: 'GET',
+		        url: 'json/districts.json',
+		        dataType: 'json'
+		    }).done(function (res) {
+		    	var arradd=new Array();
+		    	arradd=addstr.split(",");
+		    	
+		        DISTRICTS = res;
+		        htm = '<option value="">----请选择-----</option>';
+		        for(var key in DISTRICTS['100000']) {
+		            htm += '<option value="'+key+'">'+DISTRICTS['100000'][key]+'</option>';
+		        }
+		        province_selector.html(htm);
+		        city_selector.html('<option value="">----请选择-----</option>');
+		        district_selector.html('<option value="">----请选择-----</option>');
+		    }).fail(function () {
+		        console.log('获取地区json数据失败');
+		    });
+     } */
+  </script>
+  <script type="text/javascript">
+		function altRows(id){
+			if(document.getElementsByTagName("table")){ 
+				
+				var table = document.getElementById(id);  
+				var rows = table.getElementsByTagName("tr"); 
+				 
+				for(i = 0; i < rows.length; i++){          
+					if(i % 2 == 0){
+						rows[i].className = "evenrowcolor";
+					}else{
+						rows[i].className = "oddrowcolor";
+					}      
+				}
+			}
+		}
+		//弹出一个询问框，有确定和取消按钮
+    	function firm() {
+        //利用对话框返回的值 （true 或者 false）
+        if (confirm("你确定要删除吗？")) {
+            //alert("点击了确定");
+            return true;
+        }else {
+            //alert("点击了取消");
+            return false;
+        }
+ 
+    	}
+		/* window.onload=function(){
+			altRows('alternatecolor');
+		} */
+	</script>
+</html>

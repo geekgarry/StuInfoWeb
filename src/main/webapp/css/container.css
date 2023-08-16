@@ -1,0 +1,5 @@
+@charset "UTF-8";
+*{margin: 0;padding: 0;}
+body{font:13px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;}
+.container{width:99%;margin: 0 auto;}
+.container table{width:99%; margin: 0 auto;}

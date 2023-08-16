@@ -1,0 +1,45 @@
+@charset "UTF-8";
+* {
+		padding:0;
+		margin:0;
+	}
+.main_content {
+		width:98%;
+		margin:20px auto 0;
+	}
+table {
+		border-collapse:collapse;
+		border-spacing:0;
+		border:1px solid #c0c0c0;
+		width:100%;
+		margin: 0 auto;
+		font-size: 12px;
+	}
+th,td {
+		border:1px solid #d0d0d0;
+		color:#404060;
+		padding:10px;
+	}
+th {
+		background-color:#09c;
+		font:bold 16px "微软雅黑";
+		color:#fff;
+		font-size: 12px;
+	}
+td {
+		font:12px "微软雅黑";
+	}
+tbody tr {
+		background-color:#f0f0f0;
+	}
+tbody tr:hover {
+		cursor:pointer;
+		background-color:#fafafa;
+		font-size: 12px;
+	}
+.search_div{width:94%; height:30px; line-height: 30px; margin: 5px auto;background: #92e7cb;}
+#courseteam{height:30px; line-height: 30px; border: #0080ff 1px solid; border-radius:5px; width: 100px; float: left;}
+.universalbtn{text-decoration: none;text-align: center;color: #efefef; background: #0080ff;
+        	border: 1px #010101 solid; border-radius: 6px; padding-left: 8px; padding-right: 8px; 
+        	height:28px; line-height: 28px; margin-left: 3px; float: right;}
+.displaybar{width:99%;margin: 3px auto;}

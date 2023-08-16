@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>msleft2.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="css/msleft.css">
+  </head>
+  
+  <body onload="changeFrameHeight()">  
+  <div class="container">
+		<div
+			style="background: #FFF url('images/gradients.png') 0 -280px repeat-x;
+			border: 1px solid #CCC;
+			border-radius: 5px;
+			margin: 0 auto;
+			height:100%;
+			min-width: 140px;
+			max-width:220px;
+			font-size: 12px;
+			"
+			id="leftmenu">
+			 <br>
+			<h2>
+				<b>
+				<font color="#ff6600" style="font-family:'华文行楷';" >
+				<p>学生信息管理系统</p>
+				(教育局审核页面)
+				</font>
+				</b>
+			</h2>
+			<br>
+			<ul class="YOUR_SELECTOR_Menu">
+				<li><span><h4> <b><font color="#006600" >学生信息管理</font></b></h4></span>
+					<ul>
+						<li><a href="auditstuinfo.jsp" target="right_iframe"><b><font color="#5eaeae">审核学生信息</font></b></a>
+						</li>
+					</ul>
+				</li>
+				<!-- <li><span><h4> <b><font color="#006600">学生成绩管理</font></b></h4></span>
+					<ul>
+						<li><a href="listCourseScore.html" target="right_iframe"><b><font color="#5eaeae">查询学生成绩</font></b></a>
+						</li>
+						<li><a href="listcourse.html" target="right_iframe"><b><font color="#5eaeae">所有学科信息</font></b></a>
+						</li>
+						<li><a href="addCourse.html" target="right_iframe"><b><font color="#5eaeae">添加新的学科信息</font></b></a>
+						</li>
+					</ul>
+				</li>
+				<li><span><h4> <b><font color="#006600">管理员信息管理</font></b></h4></span>
+					<ul>
+						<li><a href="listalladminuser.html" target="right_iframe"><b><font color="#5eaeae">所有管理员</font></b></a>
+						</li>
+						<li><a href="addadminuser.html" target="right_iframe"><b><font color="#5eaeae">添加新管理员</font></b></a>
+						</li>
+					</ul>
+				</li> -->
+				<li><span><h4> <b><font color="#006600">其他功能</font></b></h4> </span>
+					<ul>			 
+					<!-- 	<li><a href="./myflash/myflash.html" target="mainFrame"><b> <font color="#5eaeae">关于我们</font></b></a> -->
+					  	<li><a href="aboutus.html" target="right_iframe"><b> <font color="#5eaeae">关于我们</font></b></a>  
+						</li> 
+						<li><a href="help.html" target="right_iframe"><b><font color=#5eaeae>帮助</font></b></a></li>
+					<!-- 	<li><a href="#" target="mainFrame"><b><font color="#5eaeae">退出</font></b></a></li> -->
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		 function changeFrameHeight(){
+    		var leftmenu= document.getElementById("leftmenu");
+			leftmenu.height=document.documentElement.clientHeight-88;
+			}
+			window.onresize=function(){  
+     		changeFrameHeight();
+			}
+	</script>
+	</body>
+</html>
